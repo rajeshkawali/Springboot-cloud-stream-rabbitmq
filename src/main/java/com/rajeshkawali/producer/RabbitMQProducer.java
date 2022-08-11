@@ -32,7 +32,7 @@ public class RabbitMQProducer {
 		log.info(CLASS_NAME + _function + "::ENTER");
 		try {
 			boolean status = publisherChannel.getPublisherChannel().send(message(data));
-			log.info(CLASS_NAME + _function + "::Message published to FDL rabbitMQ queue:is message published: {}", status);
+			log.info(CLASS_NAME + _function + "::Message published to rabbitMQ queue:is message published: {}", status);
 		} catch (Exception e) {
 			log.error(CLASS_NAME + _function + "::Exception occurred while publishing rabbitmq message: " + e);
 		}
