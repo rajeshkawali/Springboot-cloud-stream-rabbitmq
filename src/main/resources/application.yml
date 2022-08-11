@@ -1,0 +1,32 @@
+
+
+
+# Rabbit MQ Config
+spring.rabbitmq.host: localhost
+spring.rabbitmq.port: 5672
+spring.rabbitmq.username: guest
+spring.rabbitmq.password: guest
+#spring.rabbitmq.virtual-host: /
+spring.cloud.stream.default.contentType: text/plain    #text/plain #text/xml #application/xml #application/json
+spring.cloud.stream.default-binder: rabbit
+
+spring.cloud.stream.bindings.consumeMessage.destination: EXCHANGE.RAJESHKAWALI.CONSUME
+spring.cloud.stream.bindings.consumeMessage.group: QUEUE.RAJESHKAWALI.CONSUME
+spring.cloud.stream.rabbit.bindings.consumeMessage.consumer.bindQueue: false
+spring.cloud.stream.rabbit.bindings.consumeMessage.consumer.queueNameGroupOnly: true
+spring.cloud.stream.rabbit.bindings.consumeMessage.consumer.declareExchange: false
+spring.cloud.stream.rabbit.bindings.consumeMessage.consumer.bindingRoutingKey: 'RAJESHKAWALI'
+spring.cloud.stream.rabbit.bindings.consumeMessage.consumer.exchangeType: direct
+
+spring.cloud.stream.bindings.publishMessage.destination: EXCHANGE.RAJESHKAWALI.PRODUCE
+spring.cloud.stream.rabbit.bindings.publishMessage.producer.bindingRoutingKey:  QUEUE.RAJESHKAWALI.PRODUCE
+spring.cloud.stream.rabbit.bindings.publishMessage.producer.routingKeyExpression: '"RAJESHKAWALI"'
+spring.cloud.stream.rabbit.bindings.publishMessage.producer.declareExchange: false
+
+
+
+
+
+
+
+
